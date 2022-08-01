@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ru" style="scroll-behavior: smooth;">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Обсессивно-компульсивное расстройство — ОКР</title>
+	<meta name="description" content="Терапия ОКР и навязчивостей разного рода">
+	<link rel="icon" href="/neirology.com/favicon.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="/neirology.com/static/css/index.css">
+	<meta name="theme-color" content="#C1DEFF">
+	<meta name="color-scheme" content="light">
+</head>
+<body>
+<script src="/neirology.com/static/js/dialog-polyfill.js"></script>
+<div class="page__banner">
+	<p class="page__banner_wrapper container">
+		<a class="page__banner_link" href="">
+			Новая клиника Нейро-пси в Екатеринбурге
+		</a>
+		<button class="page__banner_close" type="button" aria-label="Скрыть сообщение" title="Скрыть сообщение" onclick="this.parentElement.parentElement.hidden = true; window.localStorage.setItem('hideBanner', '1');"></button>
+	</p>
+</div>
+<div class="page__top">
+	<div class="container">
+		<div class="page__top_wrapper">
+			Клиника в
+			<button class="page__top_select" type="button" title="Выбрать город" aria-haspopup="true" onclick="this.classList.toggle('page__top_select--expanded');">Москве</button>
+			<ul class="page__top_cities header__nav_subnav" id="cities">
+				<li class="header__nav-subitem"><a class="header__nav-sublink" href="">Екатеринбург</a></li>
+				<li class="header__nav-subitem"><a class="header__nav-sublink" href="">Краснодар</a></li>
+				<li class="header__nav-subitem"><a class="header__nav-sublink" href="">Самара</a></li>
+				<li class="header__nav-subitem"><a class="header__nav-sublink" href="">Нижнем Новгороде</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<header class="header">
+	<nav>
+		<div class="header__nav container">
+			<a class="header__logo-link" href="/neirology.com/"><img class="header__logo-img" src="/neirology.com/static/img/logo.svg" alt="Сеть клиник «Нейро-пси»" width="133" height="37"></a>
+			<ul class="header__list header__list--desktop">
+				<li class="header__nav-item header__nav-item--parent">
+					<a class="header__nav-link" href="/neirology.com/consult/" aria-haspopup="true">Первичные консультации</a>
+					<ul class="header__nav_subnav">
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/consult/psychiatrist/">Психиатр</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/consult/teen-psychologist/">Подростковый психолог</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/consult/teen-psychotherapist/">Подростковый психотерапевт</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/consult/child-psychologist/">Детский психолог</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/consult/psychotherapist/">Психотерапевт</a>
+							</li>
+					</ul>
+				</li>
+				<li class="header__nav-item header__nav-item--parent">
+					<a class="header__nav-link" href="/neirology.com/programs/" aria-haspopup="true">С чем помогаем</a>
+					<ul class="header__nav_subnav">
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/nevroses/">Нарушения невротического спектра</a>
+							</li>
+							<li class="header__nav-subitem header__nav-item--active">
+								<a class="header__nav-sublink" href="/neirology.com/programs/okr/">Обсессивно-компульсивное расстройство — ОКР</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/eating-disorders/">Пищевые расстройства, компульсивное переедание</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/vsd/">Вегето-сосудистая дистония — ВСД</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/anxiety/">Панические атаки</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/children/">Детская психология</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/depression/">Депрессия</a>
+							</li>
+					</ul>
+				</li>
+				<!-- Если есть подменю, добавляем к <li> .header__nav-item--parent -->
+				<!-- Если находимся сейчас на этой странице, добавляем к <li> .header__nav-item-active -->
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/specialists/">Специалисты</a>
+						
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/feedback/">Отзывы</a>
+						
+					</li>
+				
+					<li class="header__nav-item header__nav-item--parent">
+						<span class="header__nav-link" aria-haspopup="true" tabindex="0">Ещё</span>
+						<ul class="header__nav_subnav">
+								<li class="header__nav-subitem">
+									<a class="header__nav-sublink" href="/neirology.com/about/">О клинике</a>
+								</li>
+								<li class="header__nav-subitem">
+									<a class="header__nav-sublink" href="/neirology.com/price/">Цены</a>
+								</li>
+								<li class="header__nav-subitem">
+									<a class="header__nav-sublink" href="/neirology.com/blog/">Блог</a>
+								</li>
+								<li class="header__nav-subitem">
+									<a class="header__nav-sublink" href="/neirology.com/vacancies/">Вакансии</a>
+								</li>
+								<li class="header__nav-subitem">
+									<a class="header__nav-sublink" href="/neirology.com/contact/">Контакты</a>
+								</li>
+						</ul>
+					</li>
+				
+			</ul>
+			<p class="header__contact">
+				<a class="header__tel" href="tel:88006003264">8 800 600 32 64</a><br>
+				<!-- Для кнопок, вызывающих попапы добавляем aria-haspopup="dialog" и прописываем id <dialog>'а в aria-controls -->
+				<button class="btn--text" type="button" aria-haspopup="dialog" aria-controls="callback">Перезвоните мне</button>
+			</p>
+		</div>
+		<div class="header__divider"></div>
+		<div class="header__list-wrapper--mobile">
+			<ul class="header__list header__list--mobile" hidden>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/consult/">Первичные консультации</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/programs/">С чем помогаем</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/specialists/">Специалисты</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/feedback/">Отзывы</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/about/">О клинике</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/price/">Цены</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/blog/">Блог</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/vacancies/">Вакансии</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/contact/">Контакты</a>
+					</li>
+			</ul>
+		</div>
+	</nav>
+</header>
+<!-- Если какой-то попап нужно открыть при загрузке страницы, добавьте ему аттрибут [open] -->
+<dialog class="popup" id="callback">
+	<h2 class="popup__title">Перезвоните мне</h2>
+	<form class="popup__close" method="dialog">
+		<button class="popup__close_icon" type="submit" aria-label="Закрыть окно" title="Закрыть"></button>
+	</form>
+	<form class="popup__form" action="" method="post">
+		<p class="form__row">
+			<label class="form__label page__subheading" for="callbackName">Ваши имя и фамилия</label>
+			<input class="form__input" type="text" placeholder="Иван Иванов" id="callbackName" name="name">
+		</p>
+		<p class="form__row">
+			<label class="form__label page__subheading" for="callbackTel">Номер телефона</label>
+			<!-- Ошибка показывается, если инпуту добавить .form__input--error -->
+			<input class="form__input" type="tel" placeholder="+7 ___ ___-__-__" id="callbackTel" name="tel" required>
+			<span class="form__error" hidden>Введите телефон, чтобы мы могли перезвонить и подтвердить запись.</span>
+		</p>
+		<p class="form__row">
+			<label class="form__label page__subheading" for="callbackComment">Комментарий</label>
+			<textarea class="form__input" placeholder="Если мы должны знать что-то важное, расскажите об этом здесь" id="callbackComment" name="comment" rows="5"></textarea>
+		</p>
+		<p class="form__message form__message--success" hidden><b>Спасибо!</b> Скоро с вами свяжется менеджер.</p>
+		<p class="form__message form__message--fail" hidden>
+			<b>Что-то пошло не так!</b> Если проблема повторится, пожалуйста, позвоните по телефону.
+			<a class="color--inherit" href="tel:88006003264">Позвонить нам →</a></p>
+		<input class="btn form__submit" type="submit" value="Оставить заявку">
+		<p class="form__policy">Отправляя заявку, вы соглашаетесь<br>с <a class="form__policy_link" href="">условиями обработки персональных данных</a>
+		</p>
+	</form>
+</dialog>
+
+<main>
+	<div class="hero hero--bg" style="background-color: #C1DEFF;background-image: url('/neirology.com/static/img/hero_blue.png');">
+	<div class="container">
+		<h1 class="hero__title">Обсессивно-компульсивное расстройство — ОКР</h1>
+	</div>
+</div>
+<div class="container page__columns">
+	<aside class="page__aside"></aside>
+	<div class="page__content">
+		<p class="page__lead">Если вы узнали себя в описаниях ниже, то скорее всего вы столкнулись с депрессией.</p>
+		<h2>Мысли и идеи</h2>
+<p>Во время депрессии человека, чаще всего, захватывают мысли, связанные с прошлым, бессмысленностью жизни, одиночеством и<br>
+собственной неспособностью справиться с проблемами.</p>
+<p>Мысли часто превращаются в руминации. Руминации — это навязчивая мысленная жвачка, которая прокручивается в голове<br>
+постоянно и выматывает.</p>
+<p><strong>Возвращение в прошлое.</strong> Человек в депрессии мыслями погружается в прошлое.</p>
+<p>Он считает, что ошибки в прошлом безнадёжно испортили будущее и он не сможет ничего изменить, а значит дальнейшая жизнь<br>
+бессмысленна. Например, человеку может казаться, что прошлые отношения были лучшими в жизни и он не сможет найти другого<br>
+партнера.</p>
+<blockquote>
+<p>Я сделал неверный выбор. Если бы я этого не сделал, все могло бы сложиться иначе</p>
+</blockquote>
+<p><strong>Бессмысленность жизни и усилий.</strong> Частые мысли о том, что жизнь не имеет смысла и в ней нет радости. Собственная жизнь<br>
+перестает вызывать интерес, а все усилия для ее улучшения кажутся тщетными. Преследуют мысли о том, что ничего не<br>
+хочется, ничто не впечатляет и мотивация навсегда утеряна.</p>
+<blockquote>
+<p>Зачем я проснулся? Ещё один день, быстрее бы он закончился. У меня нет сил на борьбу с жизнью</p>
+</blockquote>
+<p><strong>Самокритика и самоуничижение.</strong> Жесткие критичные мысли о собственной «ничтожности». Человек постоянно находит им<br>
+подтверждения в реальности.</p>
+<p>Например, если не может встать рано утром или если не поступил в институт, хотя готовился. В подобные моменты человек<br>
+лишний раз убеждается, что он недостаточно хорош.</p>
+<blockquote>
+<p>Я сломался. Я не способен ни на что серьезное: бездарный, глупый, слабый</p>
+</blockquote>
+<p><strong>Изоляция и разрыв отношений.</strong> Человек начинает проводить меньше времени с близкими и обществом в целом. Чаще выбирает<br>
+безлюдные маршруты и отказывается от встреч. У него появляются мысли, что он никому не нужен и ему никто не нужен.</p>
+<blockquote>
+<p>Лучше мне быть одному, ведь всё равно никто не сможет помочь</p>
+</blockquote>
+<p><strong>Суицидальные мысли.</strong> В голове проскальзывают мысли о несущественности жизни, а суицид воспринимается как способ<br>
+освободиться от ежедневной боли. Уход из жизни видится одним из вариантов решения проблем.</p>
+<h2>Эмоции и чувства</h2>
+<p>Человек в депрессии болезненно переживает безысходность и тоску, часто у него плохое настроение.</p>
+<p><strong>Скука и постоянная «душевная» боль.</strong> Человека не отпускает ощущение безвыходности, беспросветности. Он не видит<br>
+перспектив в собственной жизни и существовании человечества в целом. Приступы отчаяния сменяются глухими и затяжными<br>
+периодами печали, нередко даже чувством горевания, например по утраченной радости и упущенным возможностям.</p>
+<p><strong>Раздражение на себя и других.</strong> Люди вокруг кажутся глупыми, эгоистичными и бесполезными. Они не оправдывают ожиданий,<br>
+разочаровывают.</p>
+<p>Человеку в депрессии по-настоящему больно переносить пробки и очереди, поведение коллег и близких, которые раньше<br>
+казались замечательными. За любые промахи, например, разлитый кофе или ошибку на работе, человек яростно злится на себя<br>
+и других.</p>
+<blockquote>
+<p>Ничего нормально сделать не могу. Вот и подтвердилось, что я ничтожество</p>
+</blockquote>
+<h2>Реакции тела</h2>
+<p>Организм реагирует на депрессию, меняется физиология: нарастает апатия, появляются боли в груди и теле, ухудшаются<br>
+когнитивные способности.</p>
+<p><strong>Нет сил.</strong> Основной симптом депрессии — непроходящая усталость, сонливость и сильное снижение работоспособности. Любая<br>
+необходимость действовать вызывает эмоциональную боль и тревогу.</p>
+<p><strong>Рутина угнетает.</strong> Даже те дела, что раньше выполнялись на автомате, забирают последние силы. Например, раньше человек<br>
+собирался на работу за 15-20 минут, а сейчас на это может уйти больше часа.</p>
+<p><strong>Сбивается сон.</strong> В депрессии обязательно начинаются проблемы со сном из-за сбоя в выработке гормона мелатонина.<br>
+Становится трудно уснуть или, наоборот, человек спит слишком много.</p>
+<p><strong>Боли в груди и теле.</strong> Появляются боли: в районе солнечного сплетения, в груди, голове, мышцах. От боли не помогают<br>
+анальгетики. У многих возникают ощущения кома в горле, тяжести в груди, будто придавило плитой.</p>
+<blockquote>
+<p>Мне будто положили плиту на грудь. Тяжело вдохнуть</p>
+</blockquote>
+<p><strong>Ухудшение памяти и замедленность мышления.</strong> Когнитивная мощность снижается: мышление становится медленным, вязким,<br>
+память хуже. Любое действие вызывает эмоциональную боль, а рабочий темп падает.</p>
+<p>Рутинные дела: ответы на сообщения в мессенджерах или планирование выходных, занимавшие раньше 10 минут — теперь могут<br>
+отнять целый день. Замедленность пугает. Появляются мысли о собственной тупости или ранней шизофрении.</p>
+<blockquote>
+<p>Я потерял себя прежнего. Мой мозг необратимо разрушается, я уже никогда не буду таким умным и успешным, как раньше</p>
+</blockquote>
+<p><strong>Много слез.</strong> Люди в депрессии рассказывают, что никогда не плакали столько, сколько сейчас. Они перестают<br>
+контролировать слезы, плачут интенсивно и навзрыд. С мужчинами такое происходит реже в силу культурной причины — запрета<br>
+на слезы.</p>
+
+		<div class="page__highlighted">
+			<h2 class="page__title">Мы понимаем, что с вами происходит.<br>
+				И знаем, что с этим делать.</h2>
+			<p>Люди в депрессии думают, что им никто не поможет, в том числе психотерапевт. Так думать — нормально.</p>
+			<p>Убежденность, что «мне никто не поможет», возникает из-за ощущения бессилия. «Ведь я уже пытался что-то изменить, но все приводило к той же точке. Почему обращение к психотерапевту вдруг поможет?» Чувство бессилия переживается интенсивно, поэтому суждение кажется верным, точным.</p>
+			<p>Чувство бессилия — основная проблема из-за которой человек в депрессии не обращается к пси-специалистам. Но научные методы психотерапии и современная фармакотерапия показывают высокие результаты в лечении депрессии.</p>
+			<p>Улучшения происходят не за один сеанс или месяц, но они непременно наступают: появляются силы, «свет в конце тоннеля» и неуклонно растет качество жизни.</p>
+			<figure class="page__highlighted_author">
+				<img src="https://neirology.com/assets/images/dist/boss.png" width="64" height="64" alt="">
+				<figcaption>
+					<b>Рахманов Владимир Александрович</b>
+					<p>Директор клиники, психиатр, психотерапевт</p>
+				</figcaption>
+			</figure>
+		</div>
+		<p>
+			<b>Дополнительно, вместе с любым курсом терапии</b><br>Мы помогаем с травмами: когда в опыте были чрезвычайные ситуации, брошенность, отвержение или другие травмирующие события. В результате: пройдем путь принятия, избавимся от навязчивых воспоминаний и мыслей.
+		</p>
+		<p>Работаем с тяжело переносимыми эмоциями. Помогаем понять, почему они такие и что с ними делать. В результате: вы сможете справляться с жизнью эффективнее и станете стрессоустойчивее.</p>
+	</div>
+</div>
+<section class="container program__specialists">
+	<h2 class="page__title">Специалисты, которые работают с депрессией</h2>
+	<ul class="program__specialists_list">
+		
+			<li class="specialists__item">
+				<a class="specialists__item_hero" style="background-image: url(/neirology.com/static/img/kuznecov.jpg);" href="/neirology.com/specialists/kuznecov/">
+					<span class="specialists__item_title">Кузнецов Сергей Олегович</span>
+				</a>
+				<div class="specialists__item_text">
+					<p class="specialist__job">Ведущий специалист клиники</p>
+					<p class="specialist__description">Системный семейный психотерапевт, КПТ-терапевт</p>
+					<p class="specialist__preview">Разработает схему вашей проблемы и шаги по ее устранению. Поддержит на пути реальных изменений. Покажет проблему, как она есть. Не приукрасит и не добавит чего-то своего. Демонстрирует в терапии альтернативное отношение, чтобы Вы смогли его прожить на собственном опыте, а не теоретически.</p>
+					<p class="specialist__rating"><span class="specialist__rating_star">★</span>5
+						<span class="color--gray">на основе 48 отзывов</span></p>
+				</div>
+			</li>
+		
+			<li class="specialists__item">
+				<a class="specialists__item_hero" style="background-image: url(/neirology.com/static/img/pozdyaeva.jpg);" href="/neirology.com/specialists/pozdyaeva/">
+					<span class="specialists__item_title">Поздяева Анастасия Николаевна</span>
+				</a>
+				<div class="specialists__item_text">
+					<p class="specialist__job">Топ-специалист клиники</p>
+					<p class="specialist__description">Руководитель Самарского филиала. Главный врач. Психиатр. Психотерапевт</p>
+					<p class="specialist__preview">Проявляет по-настоящему доброе, сочувственное отношение к пациентам. Отличное понимание нейрофизиологии помогает ей использовать самые современные, таргетированные (сфокусированные на проблеме), методы воздействия.</p>
+					<p class="specialist__rating"><span class="specialist__rating_star">★</span>5
+						<span class="color--gray">на основе 48 отзывов</span></p>
+				</div>
+			</li>
+		
+	</ul>
+	<a href="/neirology.com/specialists/?profiles%5B%5D=psychiatrist" class="btn btn--gray btn--mutable">Показать всех</a>
+</section>
+<script src="/neirology.com/static/js/asideNav.js"></script>
+
+</main>
+<footer class="footer">
+	<div class="footer__top container">
+		<p class="footer__contact">
+			<a class="footer__tel" href="tel:88006003264">8 800 600 32 64</a><br>
+			<small class="footer__time">Ежедневно с 10:00 до 21:00</small>
+		</p>
+		<p class="footer__cities">Клиники в Москве, Краснодаре, Самаре, Екатеринбурге<br>и ещё пяти городах</p>
+		<img class="footer__logo" src="/neirology.com/static/img/logo_full.svg" alt="Нейро-Пси" width="202" height="126">
+		<div class="footer__social_list">
+			<a class="footer__social_link" href=""><img class="footer__social_img" src="/neirology.com/static/img/fb.svg" width="8" height="16" alt="Фейсбук"></a>
+			<a class="footer__social_link" href=""><img class="footer__social_img" src="/neirology.com/static/img/twitter.svg" width="16" height="16" alt="Твиттер"></a>
+			<a class="footer__social_link" href=""><img class="footer__social_img" src="/neirology.com/static/img/ig.svg" width="16" height="16" alt="Инстаграм"></a>
+		</div>
+		<ul class="footer__list">
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/consult/">Первичные консультации</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/programs/">Лечебные программы</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/specialists/">Специалисты</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/feedback/">Отзывы</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/about/">О клинике</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/blog/">Блог</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/vacancies/">Вакансии</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/contact/">Контакты</a>
+				</li>
+		</ul>
+	</div>
+	<div class="footer__divider"></div>
+	<div class="container">
+		<p class="footer__disclaimer">Консультации и информационные услуги оказывают ООО «Нейрология». 0+ Для постановки диагноза и назначения плана лечения следует записаться на очный прием к специалисту</p>
+	</div>
+	<div class="footer__bottom container">
+		<div class="footer__text">
+			<p>На сайте используются куки. <a href="" class="footer__text_link">Что это значит?</a></p>
+			<a href="/neirology.com/privacy" class="footer__text_link">Политика обработки и защиты персональных данных</a>
+			<p>© 2021 ООО «Нейрология». <span class="text--nowrap">Лицензия №ЛО-77-01-018632</span></p>
+		</div>
+		<img class="footer__legacy" src="/neirology.com/static/img/legacy.svg" alt="Нейрология" width="178" height="26">
+		<a class="footer__studio" href="https://lepekhin.studio">
+			<img class="footer__studio_img" src="/neirology.com/static/img/lepekhin.svg" alt="Лепёхин" width="82" height="32">
+			<span class="footer__studio_caption">Задизайнено<br>в Студии Евгения Лепёхина</span>
+		</a>
+	</div>
+</footer>
+
+
+
+<script src="/neirology.com/static/js/main.js"></script>
+<script src="/neirology.com/static/js/scroll-behavior-polyfill/index.js"></script>
+</body>
+</html>

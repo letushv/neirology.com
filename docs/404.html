@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Страница не найдена</title>
+	<meta name="description" content="Демо-версия сайта Нейро-Пси.">
+	<link rel="icon" href="/neirology.com/favicon.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="/neirology.com/static/css/index.css">
+	<meta name="theme-color" content="#FBFAF7">
+	<meta name="color-scheme" content="light">
+</head>
+<body>
+<script src="/neirology.com/static/js/dialog-polyfill.js"></script>
+<div class="page__banner">
+	<p class="page__banner_wrapper container">
+		<a class="page__banner_link" href="">
+			Новая клиника Нейро-пси в Екатеринбурге
+		</a>
+		<button class="page__banner_close" type="button" aria-label="Скрыть сообщение" title="Скрыть сообщение" onclick="this.parentElement.parentElement.hidden = true; window.localStorage.setItem('hideBanner', '1');"></button>
+	</p>
+</div>
+<div class="page__top">
+	<div class="container">
+		<div class="page__top_wrapper">
+			Клиника в
+			<button class="page__top_select" type="button" title="Выбрать город" aria-haspopup="true" onclick="this.classList.toggle('page__top_select--expanded');">Москве</button>
+			<ul class="page__top_cities header__nav_subnav" id="cities">
+				<li class="header__nav-subitem"><a class="header__nav-sublink" href="">Екатеринбург</a></li>
+				<li class="header__nav-subitem"><a class="header__nav-sublink" href="">Краснодар</a></li>
+				<li class="header__nav-subitem"><a class="header__nav-sublink" href="">Самара</a></li>
+				<li class="header__nav-subitem"><a class="header__nav-sublink" href="">Нижнем Новгороде</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<header class="header">
+	<nav>
+		<div class="header__nav container">
+			<a class="header__logo-link" href="/neirology.com/"><img class="header__logo-img" src="/neirology.com/static/img/logo.svg" alt="Сеть клиник «Нейро-пси»" width="133" height="37"></a>
+			<ul class="header__list header__list--desktop">
+				<li class="header__nav-item header__nav-item--parent">
+					<a class="header__nav-link" href="/neirology.com/consult/" aria-haspopup="true">Первичные консультации</a>
+					<ul class="header__nav_subnav">
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/consult/psychiatrist/">Психиатр</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/consult/teen-psychologist/">Подростковый психолог</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/consult/teen-psychotherapist/">Подростковый психотерапевт</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/consult/child-psychologist/">Детский психолог</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/consult/psychotherapist/">Психотерапевт</a>
+							</li>
+					</ul>
+				</li>
+				<li class="header__nav-item header__nav-item--parent">
+					<a class="header__nav-link" href="/neirology.com/programs/" aria-haspopup="true">С чем помогаем</a>
+					<ul class="header__nav_subnav">
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/nevroses/">Нарушения невротического спектра</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/okr/">Обсессивно-компульсивное расстройство — ОКР</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/eating-disorders/">Пищевые расстройства, компульсивное переедание</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/vsd/">Вегето-сосудистая дистония — ВСД</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/anxiety/">Панические атаки</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/children/">Детская психология</a>
+							</li>
+							<li class="header__nav-subitem">
+								<a class="header__nav-sublink" href="/neirology.com/programs/depression/">Депрессия</a>
+							</li>
+					</ul>
+				</li>
+				<!-- Если есть подменю, добавляем к <li> .header__nav-item--parent -->
+				<!-- Если находимся сейчас на этой странице, добавляем к <li> .header__nav-item-active -->
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/specialists/">Специалисты</a>
+						
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/feedback/">Отзывы</a>
+						
+					</li>
+				
+					<li class="header__nav-item header__nav-item--parent">
+						<span class="header__nav-link" aria-haspopup="true" tabindex="0">Ещё</span>
+						<ul class="header__nav_subnav">
+								<li class="header__nav-subitem">
+									<a class="header__nav-sublink" href="/neirology.com/about/">О клинике</a>
+								</li>
+								<li class="header__nav-subitem">
+									<a class="header__nav-sublink" href="/neirology.com/price/">Цены</a>
+								</li>
+								<li class="header__nav-subitem">
+									<a class="header__nav-sublink" href="/neirology.com/blog/">Блог</a>
+								</li>
+								<li class="header__nav-subitem">
+									<a class="header__nav-sublink" href="/neirology.com/vacancies/">Вакансии</a>
+								</li>
+								<li class="header__nav-subitem">
+									<a class="header__nav-sublink" href="/neirology.com/contact/">Контакты</a>
+								</li>
+						</ul>
+					</li>
+				
+			</ul>
+			<p class="header__contact">
+				<a class="header__tel" href="tel:88006003264">8 800 600 32 64</a><br>
+				<!-- Для кнопок, вызывающих попапы добавляем aria-haspopup="dialog" и прописываем id <dialog>'а в aria-controls -->
+				<button class="btn--text" type="button" aria-haspopup="dialog" aria-controls="callback">Перезвоните мне</button>
+			</p>
+		</div>
+		<div class="header__divider"></div>
+		<div class="header__list-wrapper--mobile">
+			<ul class="header__list header__list--mobile" hidden>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/consult/">Первичные консультации</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/programs/">С чем помогаем</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/specialists/">Специалисты</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/feedback/">Отзывы</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/about/">О клинике</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/price/">Цены</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/blog/">Блог</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/vacancies/">Вакансии</a>
+					</li>
+					<li class="header__nav-item">
+						<a class="header__nav-link" href="/neirology.com/contact/">Контакты</a>
+					</li>
+			</ul>
+		</div>
+	</nav>
+</header>
+<!-- Если какой-то попап нужно открыть при загрузке страницы, добавьте ему аттрибут [open] -->
+<dialog class="popup" id="callback">
+	<h2 class="popup__title">Перезвоните мне</h2>
+	<form class="popup__close" method="dialog">
+		<button class="popup__close_icon" type="submit" aria-label="Закрыть окно" title="Закрыть"></button>
+	</form>
+	<form class="popup__form" action="" method="post">
+		<p class="form__row">
+			<label class="form__label page__subheading" for="callbackName">Ваши имя и фамилия</label>
+			<input class="form__input" type="text" placeholder="Иван Иванов" id="callbackName" name="name">
+		</p>
+		<p class="form__row">
+			<label class="form__label page__subheading" for="callbackTel">Номер телефона</label>
+			<!-- Ошибка показывается, если инпуту добавить .form__input--error -->
+			<input class="form__input" type="tel" placeholder="+7 ___ ___-__-__" id="callbackTel" name="tel" required>
+			<span class="form__error" hidden>Введите телефон, чтобы мы могли перезвонить и подтвердить запись.</span>
+		</p>
+		<p class="form__row">
+			<label class="form__label page__subheading" for="callbackComment">Комментарий</label>
+			<textarea class="form__input" placeholder="Если мы должны знать что-то важное, расскажите об этом здесь" id="callbackComment" name="comment" rows="5"></textarea>
+		</p>
+		<p class="form__message form__message--success" hidden><b>Спасибо!</b> Скоро с вами свяжется менеджер.</p>
+		<p class="form__message form__message--fail" hidden>
+			<b>Что-то пошло не так!</b> Если проблема повторится, пожалуйста, позвоните по телефону.
+			<a class="color--inherit" href="tel:88006003264">Позвонить нам →</a></p>
+		<input class="btn form__submit" type="submit" value="Оставить заявку">
+		<p class="form__policy">Отправляя заявку, вы соглашаетесь<br>с <a class="form__policy_link" href="">условиями обработки персональных данных</a>
+		</p>
+	</form>
+</dialog>
+
+<main>
+	
+<div class="container oops">
+	<h1 class="oops__title">Ой! Этой страницы не существует</h1>
+	<p class="oops__text">Но есть
+		<a href="/neirology.com/specialists/" class="link--text">каталог специалистов</a> и <a href="/neirology.com/programs/" class="link--text">список проблем</a>, с которыми помогаем справиться. Возможно, вам туда.
+	</p>
+	<p class="oops__text">На иллюстрации — физиолог Иван Петрович Павлов. Его исследования рефлексов у собак сыграли важную роль в формировании поведенческой терапии и психологии научения.</p>
+</div>
+
+</main>
+<footer class="footer">
+	<div class="footer__top container">
+		<p class="footer__contact">
+			<a class="footer__tel" href="tel:88006003264">8 800 600 32 64</a><br>
+			<small class="footer__time">Ежедневно с 10:00 до 21:00</small>
+		</p>
+		<p class="footer__cities">Клиники в Москве, Краснодаре, Самаре, Екатеринбурге<br>и ещё пяти городах</p>
+		<img class="footer__logo" src="/neirology.com/static/img/logo_full.svg" alt="Нейро-Пси" width="202" height="126">
+		<div class="footer__social_list">
+			<a class="footer__social_link" href=""><img class="footer__social_img" src="/neirology.com/static/img/fb.svg" width="8" height="16" alt="Фейсбук"></a>
+			<a class="footer__social_link" href=""><img class="footer__social_img" src="/neirology.com/static/img/twitter.svg" width="16" height="16" alt="Твиттер"></a>
+			<a class="footer__social_link" href=""><img class="footer__social_img" src="/neirology.com/static/img/ig.svg" width="16" height="16" alt="Инстаграм"></a>
+		</div>
+		<ul class="footer__list">
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/consult/">Первичные консультации</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/programs/">Лечебные программы</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/specialists/">Специалисты</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/feedback/">Отзывы</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/about/">О клинике</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/blog/">Блог</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/vacancies/">Вакансии</a>
+				</li>
+				<li class="footer__item">
+					<a class="footer__link" href="/neirology.com/contact/">Контакты</a>
+				</li>
+		</ul>
+	</div>
+	<div class="footer__divider"></div>
+	<div class="container">
+		<p class="footer__disclaimer">Консультации и информационные услуги оказывают ООО «Нейрология». 0+ Для постановки диагноза и назначения плана лечения следует записаться на очный прием к специалисту</p>
+	</div>
+	<div class="footer__bottom container">
+		<div class="footer__text">
+			<p>На сайте используются куки. <a href="" class="footer__text_link">Что это значит?</a></p>
+			<a href="/neirology.com/privacy" class="footer__text_link">Политика обработки и защиты персональных данных</a>
+			<p>© 2021 ООО «Нейрология». <span class="text--nowrap">Лицензия №ЛО-77-01-018632</span></p>
+		</div>
+		<img class="footer__legacy" src="/neirology.com/static/img/legacy.svg" alt="Нейрология" width="178" height="26">
+		<a class="footer__studio" href="https://lepekhin.studio">
+			<img class="footer__studio_img" src="/neirology.com/static/img/lepekhin.svg" alt="Лепёхин" width="82" height="32">
+			<span class="footer__studio_caption">Задизайнено<br>в Студии Евгения Лепёхина</span>
+		</a>
+	</div>
+</footer>
+
+
+
+<script src="/neirology.com/static/js/main.js"></script>
+
+</body>
+</html>
