@@ -1,0 +1,116 @@
+<footer class="footer">
+	<div class="footer__top container">
+		<p class="footer__contact">
+			<a class="footer__tel" href="tel:88006003264">8 800 600 32 64</a><br>
+			<small class="footer__time">Ежедневно с 10:00 до 21:00</small>
+		</p>
+		<p class="footer__cities">Клиники в Москве, Краснодаре, Самаре, Екатеринбурге<br>и ещё пяти городах</p>
+		<img class="footer__logo" src="{{ '/static/img/logo_full.svg' | url }}" alt="Нейро-Пси" width="202" height="126">
+		<div class="footer__social_list">
+			<a class="footer__social_link" href=""><img class="footer__social_img" src="{{ '/static/img/fb.svg' | url }}" width="8" height="16" alt="Фейсбук"></a>
+			<a class="footer__social_link" href=""><img class="footer__social_img" src="{{ '/static/img/twitter.svg' | url }}" width="16" height="16" alt="Твиттер"></a>
+			<a class="footer__social_link" href=""><img class="footer__social_img" src="{{ '/static/img/ig.svg' | url }}" width="16" height="16" alt="Инстаграм"></a>
+		</div>
+		<ul class="footer__list">
+			{%- for entry in metadata.footNav %}
+				<li class="footer__item{% if entry.url == page.url %} footer-item--active{% endif %}">
+					<a class="footer__link" href="{{ entry.url | url }}">{{ entry.label }}</a>
+				</li>
+			{%- endfor %}
+		</ul>
+	</div>
+	<div class="footer__divider"></div>
+	<div class="container">
+		<p class="footer__disclaimer">Консультации и информационные услуги оказывают ООО «Нейрология». 0+ Для постановки диагноза и назначения плана лечения следует записаться на очный прием к специалисту</p>
+	</div>
+	<div class="footer__bottom container">
+		<div class="footer__text">
+			<p>На сайте используются куки. <a href="" class="footer__text_link">Что это значит?</a></p>
+			<a href="{{ '/privacy' | url }}" class="footer__text_link">Политика обработки и защиты персональных данных</a>
+			<p>© 2021 ООО «Нейрология». <span class="text--nowrap">Лицензия №ЛО-77-01-018632</span></p>
+		</div>
+		<img class="footer__legacy" src="{{ '/static/img/legacy.svg' | url }}" alt="Нейрология" width="178" height="26">
+		<a class="footer__studio" href="https://lepekhin.studio">
+			<img class="footer__studio_img" src="{{ '/static/img/lepekhin.svg' | url }}" alt="Лепёхин" width="82" height="32">
+			<span class="footer__studio_caption">Задизайнено<br>в Студии Евгения Лепёхина</span>
+		</a>
+	</div>
+</footer>
+{% if hasLightbox === true %}
+	<!-- На страницах с просмотром картинок подключаем photoswipe -->
+	<link rel="stylesheet" href="{{ '/static/css/photoswipe.css' | url }}">
+	<link rel="stylesheet" href="{{ '/static/css/default-skin/default-skin.css' | url }}">
+	<script src="{{ '/static/js/photoswipe.min.js' | url }}"></script>
+	<script src="{{ '/static/js/photoswipe-ui-default.min.js' | url }}"></script>
+	<!-- Root element of PhotoSwipe. Must have class pswp. -->
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+		<!-- Background of PhotoSwipe.
+				 It's a separate element as animating opacity is faster than rgba(). -->
+		<div class="pswp__bg"></div>
+
+		<!-- Slides wrapper with overflow:hidden. -->
+		<div class="pswp__scroll-wrap">
+
+			<!-- Container that holds slides.
+					PhotoSwipe keeps only 3 of them in the DOM to save memory.
+					Don't modify these 3 pswp__item elements, data is added later on. -->
+			<div class="pswp__container">
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+			</div>
+
+			<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+			<div class="pswp__ui pswp__ui--hidden">
+
+				<div class="pswp__top-bar">
+
+					<!--  Controls are self-explanatory. Order can be changed. -->
+
+					<div class="pswp__counter"></div>
+
+					<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+					<button class="pswp__button pswp__button--share" title="Share"></button>
+
+					<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+					<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+					<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+					<!-- element will get class pswp__preloader--active when preloader is running -->
+					<div class="pswp__preloader">
+						<div class="pswp__preloader__icn">
+							<div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+					<div class="pswp__share-tooltip"></div>
+				</div>
+
+				<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+				</button>
+
+				<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+				</button>
+
+				<div class="pswp__caption">
+					<div class="pswp__caption__center"></div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<script src="{{ '/static/js/pswp.js' | url }}"></script>
+{% endif %}
+{% if hasTabs === true %}
+	<!-- На страницах с вкладками подключаем van11y-accessible-tab-panel-aria -->
+	<script src="{{ '/static/js/van11y-accessible-tab-panel-aria.min.js' | url }}"></script>
+{% endif %}

@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+---
+<div class="hero hero--bg">
+	<div class="container">
+		<h1 class="hero__title">{{ title }}</h1>
+	</div>
+</div>
+<div class="container">
+	<div class="page__content">
+		<div class="page__lead">{{ content | safe }}</div>
+		{% if video %}
+			<div class="page__video_wrapper">
+			<iframe class="page__video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/{{ video }}" title="Проигрыватель Youtube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>{% endif %}
+		<div class="cta cta--bg">
+			<h2 class="page__title">Есть вопросы или комментарий?</h2>
+			<p>Если у вас есть какой-то особенный вопрос по теме, на который нет ответа в этом материале, то напишите нам. Мы добавим вопрос в контент-план и ответим на него в блоге.</p>
+			<button class="btn" type="button">Задать вопрос</button>
+		</div>
+	</div>
+	<div class="media__suggestions">
+		<h2 class="page__title">Ещё по теме</h2>
+		<ul class="media__list media__suggestions_list">
+			{% for mediaPost in collections.blog | head(3) %}
+				{% set mediaLink = mediaPost.url | url %}
+				<li class="media__list_item">
+					<div class="media__list_text">
+						<h2 class="page__title media__list_title"><a href="{{ mediaLink }}">{{ mediaPost.data.title }}</a></h2>
+						<span class="color--gray">{{ mediaPost.data.date | readableDate }}</span>
+						<div class="media__list_description">{{ mediaPost.data.content | safe }}</div>
+						<a class="link--arrow" href="{{ mediaLink }}">Подробнее</a>
+					</div>
+					<a class="media__list_thumbnail" href="{{ mediaLink }}" aria-label="Перейти к статье"><img class="media__list_img" width="384" height="262" src="{{ mediaPost.data.img }}" alt=""></a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>

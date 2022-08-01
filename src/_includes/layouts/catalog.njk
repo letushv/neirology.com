@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="hero hero--bg">
+	<div class="container">
+		<h1 class="hero__title">{{ title }}</h1>
+	</div>
+</div>
+<div class="container page__columns">
+	<div class="page__content">
+		{% if content %}
+			<div class="page__lead">
+				{{ content | safe }}
+			</div>
+		{% endif %}
+		<ul class="table-contents">
+			{% for item in collections[collection] | reverse %}
+				<li>
+					<a class="table-contents__link" href="{{ item.url | url }}">
+						<span class="page__title">{{ item.data.title }}</span><br>
+						<span>{{ item.data.description }}</span>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<aside class="page__aside">
+		<div class="cta">
+			<h2 class="page__title">Есть вопросы? Ответим</h2>
+			<p>Оставьте заявку, мы перезвоним, ответим на все вопросы и поможем записаться на консультацию, если она потребуется</p>
+			<button class="btn" type="button">Перезвоните мне</button>
+		</div>
+	</aside>
+</div>

@@ -1,0 +1,63 @@
+<ul class="specialists">
+	{% for specialist in collections.specialists %}
+		<li class="specialists__item">
+			<a class="specialists__item_hero" style="background-image: url({{ ('/static/img/'+specialist.data.img) | url }});" href="{% if calendar === true %}{{ '/specialist-calendar' | url }}{% else %}{{ specialist.url | url }}{% endif %}">
+				<span class="specialists__item_title">{{ specialist.data.title }}</span>
+			</a>
+			<div class="specialists__item_text">
+				<p class="specialist__job">{{ specialist.data.job }}</p>
+				<p class="specialist__description">{{ specialist.data.description }}</p>
+				<p class="specialist__preview">{{ specialist.data.preview }}</p>
+				{% if calendar === true %}
+					<!-- в [data-dates] помещаем свободные окошки через запятую в порядке возрастания -->
+					<!-- если календарь не в попапе, добавляем [data-popup] с id попапа записи -->
+					<div class="calendar specialist__booking" data-dates="2021-07-12T11:00:00,2021-08-05T12:00:00,2021-08-06T10:00:00,2021-08-06T13:00:00,2021-08-06T15:00:00,2021-08-06T17:00:00" data-popup="book{{ specialist.data.id }}"></div>
+					<a href="{% if calendar === true %}{{ '/specialist-calendar' | url }}{% else %}{{ specialist.url | url }}{% endif %}" class="specialist__link btn">{{ specialist.data.btn }}</a>
+					<p class="specialist__rating"><span class="specialist__rating_star">★</span>5
+						<span class="color--gray">на основе 48 отзывов</span></p>
+				{% else %}
+					<p class="specialist__rating"><span class="specialist__rating_star">★</span>5
+						<span class="color--gray">на основе 48 отзывов</span></p>
+					<a href="{% if calendar === true %}{{ '/specialist-calendar' | url }}{% else %}{{ specialist.url | url }}{% endif %}" class="specialist__link btn">{{ specialist.data.btn }}</a>
+					<button class="btn btn--gray" type="button" aria-haspopup="dialog" aria-controls="book{{ specialist.data.id }}">Записаться на приём</button>
+				{% endif %}
+			</div>
+		</li>
+	{% endfor %}
+</ul>
+
+{% for specialist in collections.specialists %}
+	<dialog class="popup" id="book{{ specialist.data.id }}">
+		<h2 class="popup__title">Записаться на приём</h2>
+		<form class="popup__close" method="dialog">
+			<button class="popup__close_icon" type="submit" aria-label="Закрыть окно" title="Закрыть"></button>
+		</form>
+		<form class="popup__form" action="" method="post">
+			{% if calendar === true %}
+				<!-- в [data-dates] помещаем свободные окошки через запятую в порядке возрастания -->
+				<div class="calendar specialist__booking" data-dates="2021-07-12T11:00:00,2021-08-05T12:00:00,2021-08-06T10:00:00,2021-08-06T13:00:00,2021-08-06T15:00:00,2021-08-06T17:00:00"></div>
+			{% endif %}
+			<p class="form__row">
+				<label class="form__label page__subheading" for="callbackName{{ specialist.data.id }}">Ваши имя и фамилия</label>
+				<input class="form__input" type="text" placeholder="Иван Иванов" id="callbackName{{ specialist.data.id }}" name="name">
+			</p>
+			<p class="form__row">
+				<label class="form__label page__subheading" for="callbackTel{{ specialist.data.id }}">Номер телефона</label>
+				<!-- Ошибка показывается, если инпуту добавить .form__input--error -->
+				<input class="form__input" type="tel" placeholder="+7 ___ ___-__-__" id="callbackTel{{ specialist.data.id }}" name="tel" required>
+				<span class="form__error" hidden>Введите телефон, чтобы мы могли перезвонить и подтвердить запись.</span>
+			</p>
+			<p class="form__row">
+				<label class="form__label page__subheading" for="callbackComment{{ specialist.data.id }}">Комментарий</label>
+				<textarea class="form__input" placeholder="Если мы должны знать что-то важное, расскажите об этом здесь" id="callbackComment{{ specialist.data.id }}" name="comment" rows="5"></textarea>
+			</p>
+			<p class="form__message form__message--success" hidden><b>Спасибо!</b> Скоро с вами свяжется менеджер.</p>
+			<p class="form__message form__message--fail" hidden>
+				<b>Что-то пошло не так!</b> Если проблема повторится, пожалуйста, позвоните по телефону.
+				<a class="color--inherit" href="tel:88006003264">Позвонить нам →</a></p>
+			<input class="btn form__submit" type="submit" value="Оставить заявку">
+			<p class="form__policy">Отправляя заявку, вы соглашаетесь<br>с <a class="form__policy_link" href="{{ '/privacy/' | url }}">условиями обработки персональных данных</a>
+			</p>
+		</form>
+	</dialog>
+{% endfor %}

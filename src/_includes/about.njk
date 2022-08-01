@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+isScrollSmooth: true
+---
+<div class="hero hero--bg" style="{% if color %}background-color: {{ color }};{% endif %}{% if hero %}background-image: url('{{ hero | url }}');{% endif %}">
+	<div class="container">
+		<h1 class="hero__title">{{ title }}</h1>
+	</div>
+</div>
+<div class="container page__columns">
+	<aside class="page__aside"></aside>
+	<div class="page__content">
+		{% for section in body %}
+			{% if section.type === 'paragraph' %}
+				<p{% if section.lead or section.gray %} class="{% if section.lead %}page__lead{% endif %} {% if section.gray %}color--gray{% endif %}"{% endif %}>{{ section.text }}</p>
+			{% elseif section.type === 'heading' %}
+				<h2 class="page__title">{{ section.text }}</h2>
+			{% elseif section.type === 'figure' %}
+				<figure class="page__figure">
+					<img src="{{ section.src | url }}" width="300" height="230" alt="">
+					<figcaption class="color--gray">{{ section.text }}</figcaption>
+				</figure>
+			{% elseif section.type === 'highlighted' %}
+				<div class="page__highlighted">
+					{% for subsection in section.body %}
+						{% if subsection.type === 'paragraph' %}
+							<p>{{ subsection.text }}</p>
+						{% elseif subsection.type === 'heading' %}
+							<h2 class="page__title">{{ subsection.text }}</h2>
+						{% elseif subsection.type === 'subheading' %}
+							<h3>{{ subsection.text }}</h3>
+						{% elseif subsection.type === 'author' %}
+							<figure class="page__highlighted_author">
+								<img src="{{ subsection.src | url }}" width="64" height="64" alt="">
+								<figcaption>
+									<b>{{ subsection.name }}</b>
+									<p>{{ subsection.job}}</p>
+								</figcaption>
+							</figure>
+						{% endif %}
+					{% endfor %}
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+<script src="{{ '/static/js/asideNav.js' | url }}"></script>

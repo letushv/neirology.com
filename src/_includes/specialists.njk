@@ -1,0 +1,127 @@
+---
+title: Специалисты | Нейро-Пси
+layout: layouts/base.njk
+---
+
+<div class="hero hero--bg">
+	<div class="container">
+		<h1 class="hero__title">Специалисты клиники</h1>
+	</div>
+</div>
+
+<div class="container">
+	<p class="filter__toggle">
+		<span class="color--gray">10 специалистов</span>
+		<button class="filter__toggle_btn btn--text" type="button" aria-controls="filter" onclick="this.innerText = ((this.innerText==='Показать фильтр') ? 'Скрыть' : 'Показать') + ' фильтр'; document.getElementById(this.getAttribute('aria-controls')).hidden ^= true;">Показать фильтр</button>
+	</p>
+	<form class="filter" action="" method="get" id="filter" hidden>
+		<fieldset class="filter__fieldset">
+			<!-- В .filter__btn_counter вставляем кол-во значений из соответствующего get параметра -->
+			<button class="filter__btn" type="button" aria-haspopup="dialog" aria-controls="filterGender" name="gender">Выберите пол специалиста
+				<span class="filter__btn_counter"></span></button>
+			<button class="filter__btn" type="button" aria-haspopup="dialog" aria-controls="filterProfile" name="profiles">На чём специализируется
+				<span class="filter__btn_counter"></span></button>
+			<button class="filter__btn" type="button" aria-haspopup="dialog" aria-controls="filterNuances" name="nuances">Выберите нюансы подхода
+				<span class="filter__btn_counter"></span></button>
+			<input class="filter__submit btn" type="submit" value="Показать">
+		</fieldset>
+
+		<dialog class="popup" id="filterGender">
+			<h3 class="popup__title">Пол специалиста</h3>
+			<div class="popup__close">
+				<button class="popup__close_icon js-filter__close" type="button" aria-label="Закрыть окно" title="Закрыть" aria-controls="filterGender"></button>
+			</div>
+			<fieldset class="filter__fieldset filter__fieldset--checkboxes">
+				<legend class="filter__fieldset_legend page__subheading">С кем работать комфортнее?</legend>
+				<p class="filter__checkbox_row">
+					<label class="filter__checkbox_btn">
+						<input class="filter__checkbox invisible" name="gender" value="male" type="radio">
+						<span class="filter__checkbox_label">С мужчиной</span>
+						<span class="filter__checkbox_count">20</span>
+						<span class="filter__checkbox_tick filter__checkbox_tick--radio"></span>
+					</label>
+				</p>
+				<p class="filter__checkbox_row">
+					<label class="filter__checkbox_btn">
+						<input class="filter__checkbox invisible" name="gender" value="female" type="radio">
+						<span class="filter__checkbox_label">С женщиной</span>
+						<span class="filter__checkbox_count">15</span>
+						<span class="filter__checkbox_tick filter__checkbox_tick--radio"></span>
+					</label>
+				</p>
+				<p class="filter__checkbox_row">
+					<label class="filter__checkbox_btn">
+						<input class="filter__checkbox invisible" name="gender" value="any" type="radio">
+						<span class="filter__checkbox_label">И с тем, и с тем</span>
+						<span class="filter__checkbox_count">35</span>
+						<span class="filter__checkbox_tick filter__checkbox_tick--radio"></span>
+					</label>
+				</p>
+			</fieldset>
+			<button class="btn form__submit js-filter__close" type="button" aria-controls="filterGender">Выбрать</button>
+		</dialog>
+
+		<dialog class="popup" id="filterProfile">
+			<h3 class="popup__title">Специализация</h3>
+			<div class="popup__close">
+				<button class="popup__close_icon js-filter__close" type="button" aria-label="Закрыть окно" title="Закрыть" aria-controls="filterProfile"></button>
+			</div>
+			<fieldset class="filter__fieldset filter__fieldset--checkboxes">
+				<legend class="filter__fieldset_legend page__subheading">Какого специалиста ищете?</legend>
+				<button class="filter__all btn--text" type="button">Выбрать всё</button>
+				{% for profile in collections.consult %}
+					<p class="filter__checkbox_row">
+						<label class="filter__checkbox_btn">
+							<input class="filter__checkbox invisible" name="profiles[]" value="{{ profile.fileSlug }}" type="checkbox">
+							<span class="filter__checkbox_label">{{ profile.data.title }}</span>
+							<span class="filter__checkbox_count">1</span>
+							<span class="filter__checkbox_tick"></span>
+						</label>
+					</p>
+				{% endfor %}
+			</fieldset>
+			<button class="btn form__submit js-filter__close" type="button" aria-controls="filterProfile">Выбрать</button>
+		</dialog>
+
+		<dialog class="popup" id="filterNuances">
+			<h3 class="popup__title">Нюансы подхода</h3>
+			<div class="popup__close">
+				<button class="popup__close_icon js-filter__close" type="button" aria-label="Закрыть окно" title="Закрыть" aria-controls="filterNuances"></button>
+			</div>
+			<fieldset class="filter__fieldset filter__fieldset--checkboxes">
+				<legend class="filter__fieldset_legend page__subheading">Что вам важно в терапии?</legend>
+				<button class="filter__all btn--text" type="button">Выбрать всё</button>
+				<p class="filter__checkbox_row">
+					<label class="filter__checkbox_btn">
+						<input class="filter__checkbox invisible" name="nuances[]" value="care" type="checkbox">
+						<span class="filter__checkbox_label">Забота</span>
+						<span class="filter__checkbox_count">20</span>
+						<span class="filter__checkbox_tick"></span>
+					</label>
+				</p>
+				<p class="filter__checkbox_row">
+					<label class="filter__checkbox_btn">
+						<input class="filter__checkbox invisible" name="nuances[]" value="rational" type="checkbox">
+						<span class="filter__checkbox_label">Рациональный подход</span>
+						<span class="filter__checkbox_count">15</span>
+						<span class="filter__checkbox_tick"></span>
+					</label>
+				</p>
+				<p class="filter__checkbox_row">
+					<label class="filter__checkbox_btn">
+						<input class="filter__checkbox invisible" name="nuances[]" value="lgbt" type="checkbox">
+						<span class="filter__checkbox_label">ЛГБТ-френдли</span>
+						<span class="filter__checkbox_count">5</span>
+						<span class="filter__checkbox_tick"></span>
+					</label>
+				</p>
+			</fieldset>
+			<button class="btn form__submit js-filter__close" type="button" aria-controls="filterNuances">Выбрать</button>
+		</dialog>
+
+	</form>
+
+	{% include "components/specialists-list.njk" %}
+</div>
+<!-- На страницах с вкладками подключаем van11y-accessible-tab-panel-aria -->
+<script src="{{ '/static/js/van11y-accessible-tab-panel-aria.min.js' | url }}"></script>

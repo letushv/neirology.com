@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+permalink: 404.html
+eleventyExcludeFromCollections: true
+title: Страница не найдена
+---
+
+<div class="container oops">
+	<h1 class="oops__title">Ой! Этой страницы не существует</h1>
+	<p class="oops__text">Но есть
+		<a href="{{ '/specialists/' | url }}" class="link--text">каталог специалистов</a> и <a href="{{ '/programs/' | url }}" class="link--text">список проблем</a>, с которыми помогаем справиться. Возможно, вам туда.
+	</p>
+	<p class="oops__text">На иллюстрации — физиолог Иван Петрович Павлов. Его исследования рефлексов у собак сыграли важную роль в формировании поведенческой терапии и психологии научения.</p>
+</div>

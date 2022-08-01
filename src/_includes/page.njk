@@ -1,0 +1,56 @@
+---
+layout: layouts/base.njk
+isScrollSmooth: true
+---
+<div class="hero hero--bg" style="{% if color %}background-color: {{ color }};{% endif %}{% if hero %}background-image: url('{{ hero | url }}');{% endif %}">
+	<div class="container">
+		<h1 class="hero__title">{{ title }}</h1>
+	</div>
+</div>
+<div class="container page__columns">
+	<aside class="page__aside"></aside>
+	<div class="page__content">
+		<p class="page__lead">{{ lead }}</p>
+		{{ content | safe }}
+		<div class="page__highlighted">
+			<h2 class="page__title">Мы понимаем, что с вами происходит.<br>
+				И знаем, что с этим делать.</h2>
+			<p>Люди в депрессии думают, что им никто не поможет, в том числе психотерапевт. Так думать — нормально.</p>
+			<p>Убежденность, что «мне никто не поможет», возникает из-за ощущения бессилия. «Ведь я уже пытался что-то изменить, но все приводило к той же точке. Почему обращение к психотерапевту вдруг поможет?» Чувство бессилия переживается интенсивно, поэтому суждение кажется верным, точным.</p>
+			<p>Чувство бессилия — основная проблема из-за которой человек в депрессии не обращается к пси-специалистам. Но научные методы психотерапии и современная фармакотерапия показывают высокие результаты в лечении депрессии.</p>
+			<p>Улучшения происходят не за один сеанс или месяц, но они непременно наступают: появляются силы, «свет в конце тоннеля» и неуклонно растет качество жизни.</p>
+			<figure class="page__highlighted_author">
+				<img src="https://neirology.com/assets/images/dist/boss.png" width="64" height="64" alt="">
+				<figcaption>
+					<b>Рахманов Владимир Александрович</b>
+					<p>Директор клиники, психиатр, психотерапевт</p>
+				</figcaption>
+			</figure>
+		</div>
+		<p>
+			<b>Дополнительно, вместе с любым курсом терапии</b><br>Мы помогаем с травмами: когда в опыте были чрезвычайные ситуации, брошенность, отвержение или другие травмирующие события. В результате: пройдем путь принятия, избавимся от навязчивых воспоминаний и мыслей.
+		</p>
+		<p>Работаем с тяжело переносимыми эмоциями. Помогаем понять, почему они такие и что с ними делать. В результате: вы сможете справляться с жизнью эффективнее и станете стрессоустойчивее.</p>
+	</div>
+</div>
+<section class="container program__specialists">
+	<h2 class="page__title">Специалисты, которые работают с депрессией</h2>
+	<ul class="program__specialists_list">
+		{% for specialist in collections.specialists %}
+			<li class="specialists__item">
+				<a class="specialists__item_hero" style="background-image: url({{ ('/static/img/'+specialist.data.img) | url }});" href="{{ specialist.url | url }}">
+					<span class="specialists__item_title">{{ specialist.data.title }}</span>
+				</a>
+				<div class="specialists__item_text">
+					<p class="specialist__job">{{ specialist.data.job }}</p>
+					<p class="specialist__description">{{ specialist.data.description }}</p>
+					<p class="specialist__preview">{{ specialist.data.preview }}</p>
+					<p class="specialist__rating"><span class="specialist__rating_star">★</span>5
+						<span class="color--gray">на основе 48 отзывов</span></p>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+	<a href="{{ '/specialists/?profiles%5B%5D=psychiatrist' | url }}" class="btn btn--gray btn--mutable">Показать всех</a>
+</section>
+<script src="{{ '/static/js/asideNav.js' | url }}"></script>

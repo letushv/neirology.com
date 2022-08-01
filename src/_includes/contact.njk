@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+---
+<div class="hero hero--bg">
+	<div class="container">
+		<h1 class="hero__title">{{ title }}</h1>
+	</div>
+</div>
+<div class="container page__columns">
+	<div class="page__content">
+		<div class="page__lead">
+		{{ content | safe }}
+		</div>
+		<div class="page__bordered">
+			<h2 class="page__title">Адрес клиники</h2>
+			<p>г. Москва, ул. Красина, 27 стр. 2, 5 этаж</p>
+			<p>Маршрут <a class="link--text" href="">в Яндекс.Навигаторе</a> или <a class="link--text" href="">в 2ГИСе</a></p>
+			<div class="contact__map" style="position:relative;overflow:hidden;"><a class="link--text" href="https://yandex.ru/maps/org/neyro_psi_klinika_sovremennoy_psikhoterapii/33705324518/?utm_medium=mapframe&utm_source=maps" style="font-size:12px;position:absolute;top:0;">Нейро-Пси, клиника современной психотерапии</a><a class="link--text" href="https://yandex.ru/maps/213/moscow/category/psychological_service/184106088/?utm_medium=mapframe&utm_source=maps" style="font-size:12px;position:absolute;top:14px;">Психологическая служба в Москве</a><a class="link--text" href="https://yandex.ru/maps/213/moscow/category/family_counseling/184107244/?utm_medium=mapframe&utm_source=maps" style="font-size:12px;position:absolute;top:28px;">Семейное консультирование в Москве</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUm76cX9D" width="560" height="400" allow="fullscreen" style="position:relative; border: 0; width: 100%;"></iframe></div>
+			<div class="contact__gallery">
+				<img class="contact__img" src="{{ '/static/img/contact1.jpg' | url }}" alt="Фотография входа" width="248" height="278">
+				<img class="contact__img" src="{{ '/static/img/contact2.jpg' | url }}" alt="Фотография входа" width="248" height="278">
+			</div>
+		</div>
+		<div class="page__highlighted">
+			<h2 class="page__title">Реквизиты и лицензия</h2>
+			<h3>Название</h3>
+			<p>ООО «НЕЙРОЛОГИЯ-МСК»</p>
+			<h3>ИНН</h3>
+			<p>9703022117</p>
+			<h3>ОГРН</h3>
+			<p>1207700444511</p>
+			<h3>Лицензии</h3>
+			<a class="link--arrow" href="">смотреть лицензии на медицинскую деятельность</a>
+		</div>
+	</div>
+	<aside class="page__aside">
+		<div class="cta">
+			<h2 class="page__title">Записаться на приём</h2>
+			<p>Телефон: <a class="link--text color--inherit" href="tel:88006003264">8 800 600 32 64</a><br><span class="color--gray">Звонок бесплатный</span></p>
+			<p><a class="link--text color--whatsapp" href="">Написать в Ватсапе</a></p>
+			<p><a class="link--text color--telegram" href="">Написать в Телеграме</a></p>
+		</div>
+	</aside>
+</div>

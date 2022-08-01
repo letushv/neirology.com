@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+---
+<div class="hero hero--bg">
+	<div class="container">
+		<h1 class="hero__title">{{ title }}</h1>
+	</div>
+</div>
+<div class="container page__columns">
+	<div class="page__content">
+		<div class="page__lead">
+			{{ lead }}
+		</div>
+		<ul class="media__list">
+			{% for mediaPost in collections.blog %}
+				{% set mediaLink = mediaPost.url | url %}
+				<li class="media__list_item">
+					<div class="media__list_text">
+						<h2 class="page__title media__list_title"><a href="{{ mediaLink }}">{{ mediaPost.data.title }}</a></h2>
+						<span class="color--gray">{{ mediaPost.data.date | readableDate }}</span>
+						<div class="media__list_description">{{ mediaPost.data.content | safe }}</div>
+						<a class="link--arrow" href="{{ mediaLink }}">Подробнее</a>
+					</div>
+					<a class="media__list_thumbnail" href="{{ mediaLink }}" aria-label="Перейти к статье"><img class="media__list_img" width="384" height="262" src="{{ mediaPost.data.img }}" alt=""></a>
+				</li>
+			{% endfor %}
+		</ul>
+		<p class="page__pagination">
+			<a class="link--arrow_back" href="">Предыдущие 10 записей</a>
+			<a class="link--arrow" href="">Следующие 10 записей</a>
+		</p>
+	</div>
+	<aside class="page__aside">
+		<div id="vk_groups"></div>
+		<script src="https://vk.com/js/api/openapi.js?169"></script>
+		<script>
+			VK.Widgets.Group("vk_groups", {mode: 3, width: "314", color1: 'FFF8E5', color3: 'FFBC00', no_cover: 1}, 20075849);
+		</script>
+	</aside>
+</div>

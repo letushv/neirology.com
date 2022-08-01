@@ -1,0 +1,6 @@
+{
+  "tags": [
+    "specialists"
+  ],
+  "layout": "specialists-page.njk"
+}

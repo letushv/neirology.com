@@ -1,0 +1,146 @@
+---
+layout: layouts/base.njk
+hasLightbox: true
+hasTabs: true
+---
+<!-- Если у шапки сайта есть фон, добавляем .hero--bg, и путь к картинке в style -->
+<div class="hero hero--bg hero--specialist" style="background-image: url('{{ ('/static/img/'+img) | url }}');">
+	<div class="container">
+		<h1 class="hero__title">{{ title }}</h1>
+	</div>
+</div>
+<div class="specialist__body container">
+	<div class="specialist__tags">
+		<p class="specialist__job">{{ job }}</p>
+		<p class="specialist__description">{{ description }}</p>
+	</div>
+	<div class="specialist__calendar">
+		<p class="specialist__booking">
+			<button class="btn" type="button" aria-haspopup="dialog" aria-controls="book{{ id }}">{{ booking }}</button>
+		</p>
+	</div>
+	<div class="specialist__content">
+		<div class="specialist__content_features specialist__content_features--abriged">
+			<div class="specialist__content_features_wrapper">
+				<h2 class="specialist__heading">О специалисте</h2>
+				<p class="specialist__description">{{ about }}</p>
+				<div class="specialist__banner">
+					<h2 class="specialist__heading">{{ whom }}</h2>
+					<p class="specialist__description">{{ paragraph }}</p>
+				</div>
+				<h2 class="specialist__heading">C чем поможет?</h2>
+				<ul class="specialist__features">
+					<li class="specialist__feature">принятие решений: тупик в жизни, выгорание, «не понимаю, куда двигаться», отсутствие поддержки.</li>
+					<li class="specialist__feature">отношения, семья: конфликты/скандалы, холодность, обиды, предразвод/развод, одиночество.</li>
+					<li class="specialist__feature">родительство: эмоциональное выгорание, конфликты с ребенком, родительское «бессилие», родительские страхи.</li>
+					<li class="specialist__feature">депрессивное: депрессия, апатия, хроническая усталость, тоска.</li>
+					<li class="specialist__feature">тревожное: панические атаки, страхи, фобии.</li>
+					<li class="specialist__feature">навязчивости: ОКР, навязчивые мысли/ритуалы.</li>
+					<li class="specialist__feature">соматическое: ВСД, физические симптомы невроза, бессонница/гипорсомния (все время хочется спать), расстройства кишечника, остеохондроз, головные боли.</li>
+					<li class="specialist__feature">подростки: неуправляемость/замкнутость, немотивированность к учебе, хамство, подавленность, трудности в общении.</li>
+					<li class="specialist__feature">пищевое: анорексия/булимия, отвращение к телу.</li>
+				</ul>
+				<h2 class="specialist__heading">C чем не поможет?</h2>
+				<ul class="specialist__features">
+					<li class="specialist__feature">дети: истерики, агрессивность, физические проявления невроза (энурез/энкопрез), плаксивость, непослушание.</li>
+					<li class="specialist__feature">большая психиатрия: БАР, расстройства шизофренического спектра, психозы.</li>
+					<li class="specialist__feature">возрастное: деменция, возрастные изменения психики.</li>
+				</ul>
+			</div>
+			<button class="js-tabcontent__expand btn--text" type="button" onclick="this.parentElement.classList.remove('specialist__content_features--abriged');" hidden>Читать подробнее о специалисте</button>
+		</div>
+
+		<h2 class="specialist__heading specialist__heading--big">Отзывы о работе</h2>
+		<div class="js-tabs">
+			<ul class="js-tablist" data-hx="h2">
+				<li class="js-tablist__item">
+					<a href="#offline" class="js-tablist__link">Рукописные
+						<span class="color--gray">{{ metadata.offlineFeedback | length }}</span></a>
+				</li>
+				<li class="js-tablist__item">
+					<a href="#online" class="js-tablist__link">В интернете</a>
+				</li>
+			</ul>
+			<!-- Если отзывов больше двух добавляем класс js-tabcontent--abriged -->
+			<div id="offline" class="js-tabcontent js-tabcontent--abriged">
+				<h2 class="invisible">Отзывы, оставленные в клиниках</h2>
+				<ul class="feedback__offline js-gallery">
+					{%- for entry in metadata.offlineFeedback %}
+						<li class="feedback__offline_item">
+							<a class="feedback__offline_link js-gallery__link" href="{{ entry.img | url }}" aria-expanded="false">
+								<img class="feedback__offline_img" src="{{ entry.img | url }}" alt="Фотография отзыва." width="64" height="88">
+							</a>
+							<div class="feedback__offline_info">
+								<h3 class="feedback__offline_title">{{ entry.title }}</h3>
+								<dl class="feedback__offline_description">
+									<dt class="feedback__offline_heading page__subheading">Жалобы</dt>
+									<dd class="feedback__offline_text">{{ entry.complaints }}</dd>
+									<dt class="feedback__offline_heading page__subheading">Отзыв клиента</dt>
+									<dd class="feedback__offline_text feedback__offline_text--collapsed"><span>{{ entry.text }}</span>
+									</dd>
+								</dl>
+								<button class="btn--text feedback__expand" type="button">Читать полностью</button>
+							</div>
+						</li>
+					{%- endfor %}
+				</ul>
+				<button class="js-tabcontent__expand btn--text" type="button" onclick="this.parentElement.classList.remove('js-tabcontent--abriged');" hidden>Показать все отзывы</button>
+			</div>
+			<div id="online" class="js-tabcontent">
+				<h2 class="js-tabcontent__heading">Рейтинг специалиста на независимых порталах</h2>
+				{% include 'components/onlineFeedback.njk' %}
+			</div>
+		</div>
+		<h2 class="specialist__heading specialist__heading--big">Дипломы и сертификаты</h2>
+		<ul class="specialist__certificates js-gallery">
+			{%- for certificate in certificates %}
+				<li class="specialist__certificate">
+					<a class="specialist__certificate_link js-gallery__link" href="{{ certificate | url }}" aria-expanded="false">
+						<img class="specialist__certificate_img" src="{{ certificate | url }}" alt="Скан сертификата." width="118" height="84">
+					</a>
+				</li>
+			{%- endfor %}
+		</ul>
+	</div>
+</div>
+<dialog class="popup" id="book{{ id }}">
+	<h2 class="popup__title">Записаться на приём</h2>
+	<form class="popup__close" method="dialog">
+		<button class="popup__close_icon" type="submit" aria-label="Закрыть окно" title="Закрыть"></button>
+	</form>
+	<form class="popup__form" action="" method="post">
+		<p class="form__row">
+			<label class="form__label page__subheading" for="bookName">Ваши имя и фамилия</label>
+			<input class="form__input" type="text" placeholder="Иван Иванов" id="bookName" name="name">
+		</p>
+		<p class="form__row">
+			<label class="form__label page__subheading" for="bookTel">Номер телефона</label>
+			<!-- Ошибка показывается, если инпуту добавить .form__input--error -->
+			<input class="form__input" type="tel" placeholder="+7 ___ ___-__-__" id="bookTel" name="tel" required>
+			<span class="form__error" hidden>Введите телефон, чтобы мы могли перезвонить и подтвердить запись.</span>
+		</p>
+		<p class="form__row">
+			<label class="form__label page__subheading" for="bookComment">Комментарий</label>
+			<textarea class="form__input" placeholder="Если мы должны знать что-то важное, расскажите об этом здесь" id="bookComment" name="comment" rows="5"></textarea>
+		</p>
+		<p class="form__message form__message--success" hidden><b>Спасибо!</b> Скоро с вами свяжется менеджер.</p>
+		<p class="form__message form__message--fail" hidden>
+			<b>Что-то пошло не так!</b> Если проблема повторится, пожалуйста, позвоните по телефону.
+			<a class="color--inherit" href="tel:88006003264">Позвонить нам →</a></p>
+		<input class="btn form__submit" type="submit" value="Оставить заявку">
+		<p class="form__policy">Отправляя заявку, вы соглашаетесь<br>с <a class="form__policy_link" href="">условиями обработки персональных данных</a>
+		</p>
+	</form>
+</dialog>
+<div class="container">
+	<h2 class="specialist__heading specialist__heading--big">Похожие специалисты</h2>
+	<ul class="specialist-others">
+		{% for specialist in collections.specialists %}
+			<li class="specialist-others__item">
+				<a class="specialists__item_hero" style="background-image: url({{ ('/static/img/'+specialist.data.img) | url }});" href="{{ specialist.url | url }}">
+					<span class="specialists__item_title">{{ specialist.data.title }}</span>
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

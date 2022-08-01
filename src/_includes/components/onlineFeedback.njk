@@ -1,0 +1,19 @@
+<ul class="feedback__online">
+	{%- for entry in metadata.onlineFeedback %}
+		<li class="feedback__online_item">
+			<a class="feedback__online_link" href="{{ entry.url | url }}">
+				<img class="feedback__online_logo" src="{{ entry.img | url }}" alt="{{ entry.title }}" width="200">
+				<p class="feedback__online_rating">{{ entry.rating }}</p>
+				<!-- Округлять кол-ао звездочек до большего, начиная с .8 -->
+				{% if (entry.rating - (entry.rating | int)) > 7 %}
+					{% set rating = entry.rating - 1 | int %}
+				{% else %}
+					{% set rating = entry.rating | int %}
+				{% endif %}
+				<p class="feedback__online_stars feedback__online_stars--{{ rating }}">
+					<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+				<p class="feedback__online_number">Отзывов: {{ entry.rates }}</p>
+			</a>
+		</li>
+	{%- endfor %}
+</ul>

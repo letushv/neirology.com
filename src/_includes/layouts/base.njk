@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru"{% if isScrollSmooth %} style="scroll-behavior: smooth;"{% endif %}>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ title or metadata.title }}</title>
+	<meta name="description" content="{{ description or metadata.description }}">
+	<link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+	<link rel="stylesheet" href="{{ '/static/css/index.css' | url }}">
+	<meta name="theme-color" content="{% if color %}{{ color }}{% else %}#FBFAF7{% endif %}">
+	<meta name="color-scheme" content="light">
+</head>
+<body>
+<script src="{{ '/static/js/dialog-polyfill.js' | url }}"></script>
+{% include 'components/header.njk' %}
+<main>
+	{{ content | safe }}
+</main>
+{% include 'components/footer.njk' %}
+<script src="{{ '/static/js/main.js' | url }}"></script>
+{% if isScrollSmooth %}<script src="{{ '/static/js/scroll-behavior-polyfill/index.js' | url }}"></script>{% endif %}
+</body>
+</html>
